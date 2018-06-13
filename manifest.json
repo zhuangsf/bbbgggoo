@@ -15,7 +15,7 @@
 	"browser_action":
 	{
 		"default_icon": "img/icon.png",
-		"default_title": "Right click to open menu",
+		"default_title": "Click to open menu",
 		"default_popup": "popup.html"
 	},
    "manifest_version": 2,
