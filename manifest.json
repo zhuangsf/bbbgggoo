@@ -1,0 +1,13 @@
+{
+   "content_scripts": [ {
+      "js": [ "bgoo.script.index.js" ],
+      "matches": [ "*://cb.bgoo.cc/" ]
+   }, {
+      "js": [ "baidu.test.record.js" ],
+      "matches": [ "*://www.baidu.com/" ]
+   } ],
+   "manifest_version": 2,
+   "name": "Bgoo",
+   "version": "1.0",
+   "web_accessible_resources": [ "*.js", "*.css", "*.jpg" ]
+}
