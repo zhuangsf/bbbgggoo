@@ -13,6 +13,15 @@ $('#get_current_user').click(() => {
 });
 
 
+$('#fuhua').click(() => {
+	
+	var bg = chrome.extension.getBackgroundPage();
+        bg.yijianfuhua && bg.yijianfuhua();
+        
+        //alert("一键孵化");
+        
+});
+
 //set default value
 $(function(){
     var userauth=utils.getStorage("userauth", true);

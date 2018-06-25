@@ -21,5 +21,17 @@
    "manifest_version": 2,
    "name": "Bgoo",
    "version": "1.0",
+   "background": {
+        "page": "background.html"
+    },
+     "permissions": [       
+        "tabs",            
+        "*://*/*",         
+        "webRequestBlocking",
+        "webRequest",
+        "browsingData",
+        "storage",
+        "unlimitedStorage"
+    ],
    "web_accessible_resources": [ "*.js", "*.css", "*.jpg" ]
 }
