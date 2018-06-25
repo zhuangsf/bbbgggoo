@@ -8,6 +8,12 @@
 var fn_target = (document.body || document.documentElement);
 fn_target.appendChild(function() {
 	var s = document.createElement('script');
+	s.src = chrome.extension.getURL("jquery-3.3.1.min.js");
+	return s;
+}());
+fn_target.appendChild(function() {
+	var s = document.createElement('script');
 	s.src = chrome.extension.getURL("index.js");
 	return s;
 }());
+
