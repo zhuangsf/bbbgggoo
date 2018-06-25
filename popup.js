@@ -1,16 +1,24 @@
-// 获取当前标签ID
-$('#get_current_user').click(() => {
-	getCurrentTabId(tabId => {
-		alert('当前标签ID：' + tabId);
-	});
+// 设置用户的授权信息
+$('#set_current_user').click(() => {
+	var userauth=$('#userauth').val();
+	utils.setStorage("userauth", userauth);
+	alert("set success="+userauth);
 });
 
 
-// 获取当前选项卡ID
-function getCurrentTabId(callback)
-{
-	chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
-	{
-		if(callback) callback(tabs.length ? tabs[0].id: null);
-	});
-}
+
+$('#get_current_user').click(() => {
+	var userauth=utils.getStorage("userauth", true);
+	alert("get success="+userauth);
+});
+
+
+//set default value
+$(function(){
+    var userauth=utils.getStorage("userauth", true);
+    if(userauth!=null&&userauth!=""){
+   	 $("#userauth").val(userauth);
+  }
+});
+
+
