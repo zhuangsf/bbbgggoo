@@ -1,9 +1,9 @@
 console.log("paimai ....\n");
 function yijianpaimai()
 {
-	console.log("paimai 1....\n");
+	//console.log("paimai 1....\n");
 	//https://dino.lynndone.com/api/api/transaction/v1/api/market/list?page=0&pageSize=9&currency=BGO&marketType=TRANSACTION&seachSortContent=%7B%22createTime%22:%22DESC%22%7D&searchParams=%7B%22goods.goodsType%22:%22EGG%22,%22:isUser%22:false,%22contentModel%22:%22AUCTIONMODE%22%7D
-	console.log("paimai 2 userauth="+userauth+"\n");
+	//console.log("paimai 2 userauth="+userauth+"\n");
     if(userauth!=null&&userauth!=""){
    	 getpaimaiinfo(userauth);
   }
@@ -39,12 +39,16 @@ function getpaimaiinfo(logintoken){
 							        	if(nowPrice<100)
 							        	{
 							        		var timestamp_now = new Date().getTime();
-							        		console.log("nowtime:"+timestamp_now+"endtime :"+endtime+",nowPrice:"+nowPrice);
+							        		//console.log("nowtime:"+timestamp_now+"endtime :"+endtime+",nowPrice:"+nowPrice);
 							        		var delta_t = Math.round((endtime-timestamp_now));
-							        		console.log("delta t:"+delta_t);
+							        		var howlongtoaddprice = delta_t-3*1000+Math.random() * i*2000;
+							        		console.log(i+",nowPrice:"+nowPrice+",howlongtoaddprice:"+howlongtoaddprice);
 							        		//可能会和服务器时间有一点的差别。需要自己测试了微调。
 							        		
-							        		setTimeout(jiajia,parseInt(delta_t-10*1000+Math.random() * i*2000),logintoken,marketId,marketType,petcode,nowPrice+1);
+							        		if(howlongtoaddprice<5000){
+							        			console.log(i+",petcode:"+petcode+",nowPrice:"+nowPrice);
+							        			setTimeout(jiajia,parseInt(howlongtoaddprice),logintoken,marketId,marketType,petcode,nowPrice+0.1);
+							        		}
 							        		//setTimeout(jiajia,parseInt(Math.random() * i*2000),logintoken,marketId,marketType,petcode,nowPrice+1);
 							        	}
 							    	}
@@ -68,5 +72,5 @@ function jiajia(logintoken,marketId,marketType,petcode,price){
 	});
 }
 
-setTimeout(yijianpaimai,1000);
+setInterval(yijianpaimai,6*1000);
 
