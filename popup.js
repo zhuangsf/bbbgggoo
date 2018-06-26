@@ -23,6 +23,18 @@ $('#fuhua').click(() => {
         
 });
 
+$('#paimai').click(() => {
+	
+	var bg = chrome.extension.getBackgroundPage();
+        bg.paimai && bg.paimai();
+        
+        
+});
+
+
+
+
+
 //set default value
 $(function(){
     var userauth=utils.getStorage("userauth", false);
