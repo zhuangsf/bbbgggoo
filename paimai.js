@@ -41,7 +41,7 @@ function getpaimaiinfo(logintoken){
 							        		var timestamp_now = new Date().getTime();
 							        		//console.log("nowtime:"+timestamp_now+"endtime :"+endtime+",nowPrice:"+nowPrice);
 							        		var delta_t = Math.round((endtime-timestamp_now));
-							        		var howlongtoaddprice = delta_t-3*1000+Math.random() * i*2000;
+							        		var howlongtoaddprice = delta_t-3*1000+Math.random() * 2000;
 							        		console.log(i+",nowPrice:"+nowPrice+",delta_t:"+delta_t+",howlongtoaddprice:"+howlongtoaddprice);
 							        		//可能会和服务器时间有一点的差别。需要自己测试了微调。  感觉相差5s左右
 							        		
