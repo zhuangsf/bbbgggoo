@@ -24,7 +24,7 @@ function getpaimaiinfo(logintoken){
     		},
 		success:function(res){                	
                     	var petlist=res.data.rows;
-                    	
+                    	//console.log("petlist.length:"+petlist.length);
                     	for (var i = 0; i <= petlist.length - 1; i++) {
 							    		var pet = petlist[i];
 							    		var endtime=pet.endTime;
@@ -42,12 +42,13 @@ function getpaimaiinfo(logintoken){
 							        		//console.log("nowtime:"+timestamp_now+"endtime :"+endtime+",nowPrice:"+nowPrice);
 							        		var delta_t = Math.round((endtime-timestamp_now));
 							        		var howlongtoaddprice = delta_t-3*1000+Math.random() * i*2000;
-							        		console.log(i+",nowPrice:"+nowPrice+",howlongtoaddprice:"+howlongtoaddprice);
-							        		//可能会和服务器时间有一点的差别。需要自己测试了微调。
+							        		console.log(i+",nowPrice:"+nowPrice+",delta_t:"+delta_t+",howlongtoaddprice:"+howlongtoaddprice);
+							        		//可能会和服务器时间有一点的差别。需要自己测试了微调。  感觉相差5s左右
 							        		
-							        		if(howlongtoaddprice<5000){
-							        			console.log(i+",petcode:"+petcode+",nowPrice:"+nowPrice);
-							        			setTimeout(jiajia,parseInt(howlongtoaddprice),logintoken,marketId,marketType,petcode,nowPrice+0.1);
+							        		if(delta_t<6000){
+							        			console.log(i+",%cpetcode:"+petcode+"%c,nowPrice:"+nowPrice+"%c,howlongtoaddprice:"+howlongtoaddprice,"color:red;font-weight:bold;","color:orange;font-weight:bold;","color:DodgerBlue;font-weight:bold;","");
+			
+							        			setTimeout(jiajia,parseInt(delta_t-4000),logintoken,marketId,marketType,petcode,nowPrice+0.1);
 							        		}
 							        		//setTimeout(jiajia,parseInt(Math.random() * i*2000),logintoken,marketId,marketType,petcode,nowPrice+1);
 							        	}
