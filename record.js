@@ -1,4 +1,4 @@
 $(document).ready(function(){
 
-alert("ok 好的");
+console.log("ok 好的");
 });
