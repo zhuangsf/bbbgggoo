@@ -1,7 +1,7 @@
 {
    "content_scripts": [ {
       "js": [ "bgoo.script.index.js" ],
-      "matches": [ "*://dino.lynndone.com/" ]
+      "matches": [ "*://ob.bgoo.cc/" ]
    }, {
       "js": [ "baidu.test.record.js" ],
       "matches": [ "*://www.baidu.com/" ]
