@@ -13,7 +13,7 @@ function youzou()
 function getpetlist(logintoken){
 	$.ajax({
 		type: 'GET',
-		url:'api/api/pet/v1/api/pet/auxiliary/find/toMapPets?page=1&pageSize=36&code='+mapcode,
+		url:'api/api/pet/v1/api/pet/auxiliary/find/toMapPets?page=1&pageSize=100&code='+mapcode,
 		contentType : 'application/json',
 		headers: {
 			Accept: 'application/json, text/plain, */*',
@@ -34,7 +34,9 @@ function getpetlist(logintoken){
 							        	
 							        	}
 							        	console.log("youzou petcodes="+petcodes);
-							        	go(logintoken,petcodes);
+							        	if(petcodes!=null&&petcodes!=""){
+							        		go(logintoken,petcodes);
+							        }
 							    	}
 	});
 }
