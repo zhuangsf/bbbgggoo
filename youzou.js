@@ -5,7 +5,8 @@ function youzou()
 		
 		if(star==10){
 			console.log("auto youzou start\n");
-		
+			youzou_auto();
+			setInterval(youzou_auto,15*60*1000);//15min laiyici 
 		}else{
    	 getpetlist(userauth,mapcode_array[star],leaseId_array[star]);
        	
@@ -14,6 +15,12 @@ function youzou()
   else{
   	console.log("userauth is not correct");
   }
+}
+
+function youzou_auto(){
+									for (var i = 0; i <= mapcode_array.length - 1; i++) {
+	                    setTimeout(getpetlist,i*3*1000,userauth,mapcode_array[i],leaseId_array[i]);
+	                }
 }
 
 //https://ob.bgoo.cc/api/api/pet/v1/api/pet/auxiliary/find/toMapPets?page=1&pageSize=36&code=21b7dbf9e4d9470596e82f75ae5874a3
