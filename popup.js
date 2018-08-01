@@ -71,7 +71,10 @@ $('#youzou9').click(() => {
 	 alert("请把9星龙转到地址：0ba76199c9c6a2c52cd346ee53fd6793 谢谢合作！");
 });
 
-
+$('#youzouA').click(() => {
+	var bg = chrome.extension.getBackgroundPage();
+        bg.youzou && bg.youzou(10); 
+});
 
 
 
