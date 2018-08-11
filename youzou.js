@@ -80,7 +80,7 @@ var mapcode_array = new Array(
 		  "774df5dfc6b44b9d86cef885a8f2ba5a",
 		  "ab1a8eb5cf8544998b15fde3aa2198bb",
 		  "3b1e522d3b8d4fb8ae3f17a258ec143c",
-		  "527dd54a85c64eb99945767ebdd47c76"
+		  "21b7dbf9e4d9470596e82f75ae5874a3"
 		);
 		
 		var leaseId_array = new Array(
@@ -92,7 +92,7 @@ var mapcode_array = new Array(
 			"d83afffa99f74ea899fae900ae505201",
 			"4f9b8aa2473549718c9014bd0acdefc3",
 			"49b598712e7f4d978ea413a2281e168f",
-			"1f84c60ebc7742aabd2cf60f4106013c"
+			"b406e850e4cb47efa6eab632cd7d9e23"
 		);
 
 youzou();
