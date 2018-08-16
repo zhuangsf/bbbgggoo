@@ -92,7 +92,7 @@ var mapcode_array = new Array(
 			"d83afffa99f74ea899fae900ae505201",
 			"4f9b8aa2473549718c9014bd0acdefc3",
 			"49b598712e7f4d978ea413a2281e168f",
-			"b406e850e4cb47efa6eab632cd7d9e23"
+			"563d79119602425abe03e8d6f1fd1d3c"
 		);
 
 youzou();
